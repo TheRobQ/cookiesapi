@@ -1,12 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const knex = require('../../knex')
-const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser')
-const favorite = require('./favorites.js')
 
-const getCookie = (req, res, next) =>{
-  res.status(200).send('you got all cookies')
+const getCookie = (req, res) =>{
+  res.send('you got all cookies')
 }
 
 const getCookieID = (req, res, next) =>{

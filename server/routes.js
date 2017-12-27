@@ -1,16 +1,16 @@
 const express = require('express')
 const router = express.Router()
-const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser')
-const queries = require('../server/queries.js')
+const queries = require('./queries.js')
+router.use(express.static('public'))
 
 router.get('/cookies/', queries.getCookie)
 
-router.get('/cookies/:id', queries.getCookieid)
+router.get('/cookies/:id', queries.getCookieID)
 
-router.post('/cookies/',queries.addCookie)//no touchy
+router.post('/cookies/',queries.addCookie)
 
-router.put('/cookies/', queries.updateCookie)
+router.put('/cookies/:id', queries.updateCookie)
 
 router.delete('/cookies/:id', queries.deleteCookie)
 
